@@ -14,14 +14,14 @@ function getUserName(userId) {
     return user.name;
 }
 
-function printTodo({id, userId, title, complete}) {
+function printTodo({id, userId, title, completed}) {
     const li = document.createElement("li");
     li.className = "todo-item";
     li.dataset.id = id;
     li.innerHTML = `<span>${title} by <b>${getUserName(userId)}</b></span>`;
     const check = document.createElement("input");
     check.type = "checkbox";
-    check.checked = complete;
+    check.checked = completed;
     check.addEventListener("change", handleTodoChange);
     const close = document.createElement("span");
     close.innerHTML = "&times;";
